@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ullash Parameshi | Portfolio</title>
+<style>
+:root{--bg:#070b14;--bg2:#0e1527;--t:#e6edf7;--d:#8a97b2;--b:#ffffff1c;--c:#4df3ff;--m:#a98bff;--ok:#7dffb0;color-scheme:dark}
+@media(prefers-color-scheme:light){:root:not([data-theme=dark]){--bg:#f4f6fb;--bg2:#fff;--t:#10192e;--d:#55627d;--b:#0000001f;--c:#0a7ea4;--m:#6a45d8;--ok:#0f8a52;color-scheme:light}}
+:root[data-theme=light]{--bg:#f4f6fb;--bg2:#fff;--t:#10192e;--d:#55627d;--b:#0000001f;--c:#0a7ea4;--m:#6a45d8;--ok:#0f8a52;color-scheme:light}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px;padding-bottom:env(safe-area-inset-bottom,0px)}
+body{background:var(--bg);color:var(--t);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+button{font:inherit;color:inherit;cursor:pointer}
+.mono,small,.nl,.tab,.eb{font-family:ui-monospace,Menlo,Consolas,monospace}
+#pg{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--c),var(--m));z-index:80}
+nav{position:fixed;top:0;left:0;right:0;z-index:70;display:flex;align-items:center;gap:10px;padding:10px 18px;padding-top:calc(10px + env(safe-area-inset-top,0px));background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--b)}
+.logo{background:linear-gradient(135deg,var(--c),var(--m));color:#04101c;font-weight:800;padding:2px 9px;border-radius:8px}
+#links{display:flex;gap:2px;overflow-x:auto;flex:1;scrollbar-width:none}
+.nl{background:none;border:0;padding:6px 10px;font-size:13px;color:var(--d);border-bottom:2px solid transparent;white-space:nowrap}
+.nl:hover{color:var(--t)}.nl.on{color:var(--c);border-color:var(--c)}
+.ib{background:var(--bg2);border:1px solid var(--b);border-radius:8px;padding:4px 10px;font-size:13px}
+.ib:hover{border-color:var(--c)}
+.hero{min-height:100vh;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:20px;max-width:1100px;margin:0 auto;padding:100px 22px 30px}
+.eb{color:var(--c);font-size:14px}
+h1{font-size:clamp(34px,6vw,60px);line-height:1.1;margin:6px 0}
+h1 span{background:linear-gradient(90deg,var(--c),var(--m));-webkit-background-clip:text;background-clip:text;color:transparent}
+#ty{font-size:clamp(18px,3vw,26px);font-weight:500;min-height:1.6em;color:var(--m)}#ty:after{content:"▍";color:var(--c);animation:bl 1s infinite}
+@keyframes bl{50%{opacity:0}}
+.hero p.l{color:var(--d);max-width:520px;margin:12px 0 18px}
+.bt{background:var(--bg2);border:1px solid var(--b);padding:9px 16px;border-radius:10px;margin:0 8px 8px 0;transition:.2s}
+.bt:hover{border-color:var(--c);transform:translateY(-2px)}
+.bt.p{background:linear-gradient(135deg,var(--c),var(--m));color:#04101c;font-weight:700;border:0}
+.hv{position:relative;height:min(520px,60vh)}.hv canvas{width:100%;height:100%;display:block;cursor:grab}
+.hint{position:absolute;bottom:0;left:0;right:0;text-align:center;color:var(--d);font-size:12px;pointer-events:none}
+.sts{max-width:1100px;margin:0 auto;padding:0 22px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.sts div{text-align:center;padding:14px;border:1px solid var(--b);border-radius:12px;background:var(--bg2)}
+.sts b{display:block;font-size:30px;color:var(--c)}.sts span{color:var(--d);font-size:13px}
+.sec{max-width:1100px;margin:0 auto;padding:90px 22px 10px}
+.sh{font-size:clamp(26px,4vw,36px);margin-bottom:6px}.sh small{color:var(--c);font-size:14px;display:block}
+.sub{color:var(--d);margin-bottom:22px;max-width:640px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px}.g3{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.card{background:var(--bg2);border:1px solid var(--b);border-radius:14px;padding:18px;transition:transform .15s,border-color .2s,box-shadow .2s;will-change:transform}
+.card:hover{border-color:var(--c);box-shadow:0 10px 30px -12px var(--c)}
+.card h3{margin:4px 0}.card p{color:var(--d);font-size:14px;margin:6px 0 10px}
+.ic{font-size:30px}.more{color:var(--c);font-size:13px;display:block;margin-top:8px}
+.chip{display:inline-block;border:1px solid var(--b);border-radius:20px;padding:1px 10px;margin:2px 4px 2px 0;font-size:12px;color:var(--ok)}
+.row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--b);font-size:14px}.row span:first-child{color:var(--d)}
+.tabs{margin-bottom:14px}.tab{background:var(--bg2);border:1px solid var(--b);border-radius:8px;padding:5px 12px;font-size:12px;margin:0 6px 6px 0}
+.tab.on,.tab:hover{border-color:var(--c);color:var(--c)}
+.bar{height:8px;background:var(--b);border-radius:5px;margin:4px 0 12px;overflow:hidden}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--c),var(--m));transition:width 1s}
+.fl{display:flex;justify-content:space-between;font-size:13px}
+.tl{border-left:2px solid var(--b);padding:0 0 16px 16px;position:relative}.tl:before{content:"";position:absolute;left:-6px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--c)}
+.tl small{color:var(--m)}
+.rv{opacity:0;transform:translateY(24px);transition:.7s}.rv.in{opacity:1;transform:none}
+pre,.in2{width:100%;background:color-mix(in srgb,var(--bg) 70%,#000);border:1px solid var(--b);color:var(--ok);padding:9px;border-radius:8px;font:13px ui-monospace,Menlo,monospace;white-space:pre-wrap;word-break:break-all}
+input[type=range]{width:100%;accent-color:var(--c)}
+textarea.in2{min-height:90px;color:var(--t);margin-top:8px}input.in2{color:var(--t);margin-top:8px}
+ul{padding-left:20px;color:var(--d)}li{margin:3px 0}
+.mu{color:var(--d)}
+.ov{position:fixed;inset:0;z-index:90;background:#000a;display:none;align-items:center;justify-content:center;padding:20px}.ov.on{display:flex}
+.mc{background:var(--bg2);border:1px solid var(--c);border-radius:16px;padding:24px;max-width:520px;width:100%;max-height:85vh;overflow:auto;position:relative}
+.mc .x{position:absolute;right:12px;top:10px;background:none;border:0;font-size:18px;color:var(--d)}
+#ci{width:100%;padding:10px;background:none;border:0;border-bottom:1px solid var(--b);color:var(--t);font:inherit;outline:0}
+.ci{display:flex;justify-content:space-between;width:100%;background:none;border:0;padding:8px 10px;text-align:left;border-radius:8px}.ci.on,.ci:hover{background:var(--b);color:var(--c)}
+footer{text-align:center;color:var(--d);font-size:13px;padding:50px 20px 30px}
+@media(max-width:820px){.hero,.g2{grid-template-columns:1fr}.hv{height:300px}.sts{grid-template-columns:repeat(2,1fr)}.logo{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+<div id="pg"></div>
+<nav><b class="logo">UP</b><div id="links"></div><button class="ib" id="k">Search ⌘K</button><button class="ib" id="th" aria-label="Toggle theme">◐</button></nav>
+
+<section id="home"><div class="hero"><div>
+<p class="eb">Hello, I am</p><h1><span>Ullash Parameshi</span></h1><h2 id="ty"></h2>
+<p class="l">B.E. Computer Science student at RV College of Engineering, Bengaluru. I build games, secure systems and interactive tools, and I solve cryptography and steganography CTF challenges.</p>
+<button class="bt p" data-go="projects">View projects</button><button class="bt" data-go="contact">Get in touch</button><button class="bt" data-go="lab">Try the cipher lab</button></div>
+<div class="hv"><canvas id="hc"></canvas><span class="hint">Drag to rotate · click the shape to morph it</span></div></div>
+<div class="sts" id="st"></div></section>
+
+<section id="about" class="sec rv"><h2 class="sh"><small>01 / ABOUT</small>Who I am</h2>
+<p class="sub">A first-principles builder who turns coursework into working systems and treats puzzles as training.</p>
+<div class="g2"><div><p class="mu">I study Computer Science & Engineering at RVCE (2025–2029). My work spans C programming, Python, Java and C++, plus MATLAB, machine learning and experiential learning labs. I enjoy building interactive web and app tools, from game prototypes to a secure vault simulation.</p><br>
+<p class="mu">Outside class I play CTFs, including RVCE Coding Club challenges and the hackemon competition, focusing on cryptography, steganography and visual ciphers.</p><br>
+<p class="mu">I went to Indian School Sohar in Oman for Class X (CBSE, 91.4%, distinction) before moving to Bengaluru.</p></div>
+<div class="card tilt"><h3>Quick facts</h3>
+<div class="row"><span>Base</span><span>Bengaluru, India</span></div><div class="row"><span>University</span><span>RVCE, B.E. CSE</span></div><div class="row"><span>Batch</span><span>2025–2029</span></div><div class="row"><span>Lab</span><span>Skills Lab, RVCE</span></div><div class="row"><span>Languages</span><span>Python, C, Java, C++</span></div><div class="row"><span>Focus</span><span>Security, ML, web tools</span></div><div class="row"><span>Class X</span><span>91.4% (distinction)</span></div></div></div></section>
+
+<section id="skills" class="sec rv"><h2 class="sh"><small>02 / SKILLS</small>Technical toolkit</h2><p class="sub">Levels are self-assessed. Switch tabs to see languages, tools and concepts.</p>
+<div class="g2"><div><div class="tabs" id="skt"></div><div id="sk"></div></div><div class="card"><h3>Strengths radar</h3><div id="rd"></div></div></div></section>
+
+<section id="projects" class="sec rv"><h2 class="sh"><small>03 / PROJECTS</small>Things I have built</h2><p class="sub">Filter by category, hover for the 3D tilt, click a card for details.</p>
+<div class="tabs" id="pf"></div><div class="g3" id="pl"></div></section>
+
+<section id="ctf" class="sec rv"><h2 class="sh"><small>04 / CTF</small>Cipher breaking</h2><p class="sub">Competitive Capture the Flag work in cryptography, steganography and reverse engineering.</p>
+<div class="g2"><div class="g3" style="grid-template-columns:1fr">
+<div class="card tilt"><h3>🔓 Stark RC4 archive</h3><p>Custom .sba archive with a modified RC4 and a custom RLE scheme, attacked with Python brute force across hostnames, key derivations, PRGA variants and RLE markers.</p></div>
+<div class="card tilt"><h3>👁️ Visual ciphers</h3><p>Standard Galactic Alphabet, Dorabella cipher and Pokémon Unown glyphs, with OpenCV glyph segmentation pipelines.</p></div>
+<div class="card tilt"><h3>🖼️ Steganography</h3><p>LSB extraction and ZIP-concatenation analysis on challenge images.</p></div></div>
+<div class="card"><h3>Terminal</h3><p>Type <b>help</b> and press Enter.</p><input class="in2" id="tm" placeholder="> help" autocomplete="off" style="margin:0 0 8px"><pre id="to">ullash@ctf:~$ ready</pre></div></div></section>
+
+<section id="research" class="sec rv"><h2 class="sh"><small>05 / RESEARCH</small>Experiential Learning</h2><p class="sub">3rd-semester team project of 4 at RVCE, aiming for an IEEE-format paper.</p>
+<div class="card"><div class="tabs" id="pht"></div><div id="phd"></div><h3 style="margin-top:14px">Project constraints</h3><div><span class="chip">Real-world utility</span><span class="chip">Software only</span><span class="chip">Zero-cost open-source stack</span><span class="chip">Novel research gap</span></div>
+<h3 style="margin-top:14px">Theme clusters considered</h3><div id="thm"></div></div></section>
+
+<section id="journey" class="sec rv"><h2 class="sh"><small>06 / JOURNEY</small>Education & certifications</h2><p class="sub">From a COVID-era HTML site to a university CS lab.</p>
+<div class="g2"><div id="tl"></div><div><div class="card tilt"><h3>🎓 B.E. CSE, RVCE</h3><p>2025–2029, Bengaluru.</p></div><br>
+<div class="card tilt"><h3>☕ Certified Java Programmer</h3><p>BALC, 2025. Three-month offline course on core Java, OOP and application development.</p></div><br>
+<div class="card tilt"><h3>⚙️ Certified C/C++ Programmer</h3><p>BALC, 2024. Two-month course on C and C++ fundamentals, data structures and algorithms.</p></div><br>
+<div class="card"><h3>Coursework & labs</h3><span class="chip">C Programming</span><span class="chip">MATLAB</span><span class="chip">Machine Learning</span><span class="chip">Python</span><span class="chip">MySQL</span><span class="chip">Physics lab (LCR, ExpEYES-17)</span><span class="chip">Skills Lab</span><span class="chip">EL labs</span></div></div></div></section>
+
+<section id="lab" class="sec rv"><h2 class="sh"><small>07 / LAB</small>Interactive cipher lab</h2><p class="sub">A live demo inspired by my CTF and Crypto-Vault work. Type text and drag the key.</p>
+<div class="card"><input class="in2" id="li" value="ULLASH" style="margin:0"><p style="margin:12px 0 0">Shift / key: <b id="sv">3</b></p><input id="ls" type="range" min="0" max="25" value="3"><pre id="lo" style="margin-top:10px"></pre></div></section>
+
+<section id="contact" class="sec rv"><h2 class="sh"><small>08 / CONTACT</small>Let us talk</h2><p class="sub">Open to collaborations, hackathons, CTF teams and project work.</p>
+<div class="g2"><div>
+<a class="card" style="display:block;color:inherit;text-decoration:none;margin-bottom:12px" href="mailto:ullash.naik229@gmail.com">✉️ <b>Email</b><br><span class="mu">ullash.naik229@gmail.com</span></a>
+<a class="card" style="display:block;color:inherit;text-decoration:none;margin-bottom:12px" href="https://www.linkedin.com/in/ullash-parameshi-12623a292" target="_blank" rel="noopener">💼 <b>LinkedIn</b><br><span class="mu">ullash-parameshi</span></a>
+<a class="card" style="display:block;color:inherit;text-decoration:none;margin-bottom:12px" href="https://github.com/ullash-naik" target="_blank" rel="noopener">🐙 <b>GitHub</b><br><span class="mu">ullash-naik</span></a>
+<button class="bt" id="cp1">Copy email</button></div>
+<div class="card"><h3>Send a message</h3><input class="in2" id="fn" placeholder="Your name"><textarea class="in2" id="fm" placeholder="Your message"></textarea><button class="bt p" id="fs" style="margin-top:10px">Open in my mail app</button></div></div></section>
+<footer>© 2026 Ullash Parameshi · Bengaluru · Built with HTML, CSS and three.js</footer>
+
+<div class="ov" id="md"><div class="mc"><button class="x" id="mx" aria-label="Close">✕</button><div id="mb"></div></div></div>
+<div class="ov" id="cp"><div class="mc" style="padding:10px"><input id="ci" placeholder="Jump to a section or project…" autocomplete="off"><div id="cl"></div></div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],chip=x=>'<span class="chip">'+x+'</span>';
+const SEC=[['home','Home'],['about','About'],['skills','Skills'],['projects','Projects'],['ctf','CTF'],['research','Research'],['journey','Journey'],['lab','Lab'],['contact','Contact']];
+const go=id=>{const e=document.getElementById(id);e&&e.scrollIntoView({behavior:'smooth'})};
+$('#links').innerHTML=SEC.map(s=>'<button class="nl" data-go="'+s[0]+'">'+s[1]+'</button>').join('');
+// typed roles
+const RL=['CSE student at RVCE','Cryptography & CTF player','Python, C and Java developer','Builder of interactive tools'];let ri=0,ci=0,dl=false;
+(function ty(){const w=RL[ri];ci+=dl?-1:1;$('#ty').textContent=w.slice(0,ci);let t=dl?35:70;if(!dl&&ci===w.length){dl=true;t=1400}else if(dl&&ci===0){dl=false;ri=(ri+1)%RL.length;t=300}setTimeout(ty,t)})();
+// stats
+$('#st').innerHTML=[[8,'Projects'],[4,'Programming languages'],[2,'Certifications'],[3,'Visual ciphers decoded']].map(x=>'<div><b data-n="'+x[0]+'">0</b><span>'+x[1]+'</span></div>').join('');
+// data
+const P=[
+{t:'Adaptive Crypto-Vault',c:'Security',y:'C course',i:'🔐',s:['C','Makefile','HTML/JS'],d:'A rule-based secure vault simulation with layered cryptographic defences.',l:['XOR cipher with key stretching through iterative hashing','Cryptographic salting and HMAC-style integrity checks','Duress/decoy mode and a Kill PIN self-destruct','Eight C source files, a Makefile and a standalone HTML/JS simulation']},
+{t:'Smart Production &amp; Cost Analyzer',c:'Web',y:'Semester 1',i:'🏭',s:['Flask','SQLite','HTML/JS'],d:'Web app that helps small manufacturers track production and costs.',l:['First-semester group project at RVCE','Originally built with Flask and SQLite','Later rebuilt as a standalone HTML/JS app using localStorage']},
+{t:'StructoSense: Digital Twin SHM',c:'ML & Data',y:'EL Phase II',i:'🏗️',s:['Python','scikit-learn','Streamlit'],d:'Digital twin for structural health monitoring with anomaly detection.',l:['Team StructoSense','Detects anomalies across sensor channels','Streamlit dashboard on top of scikit-learn models']},
+{t:'Water Quality Monitoring System',c:'Academic',y:'EL Phase 2',i:'💧',s:['Python','python-pptx','XML'],d:'Phase 2 EL presentation for a water quality monitoring concept.',l:['Built from the AIFE EL Phase 2 template','Slides assembled with XML-level PPTX editing in Python']},
+{t:'Space Warship Game',c:'Games',y:'2024',i:'🚀',s:['Python','Pygame'],d:'2D space shooter with lasers and enemy collisions.',l:['Player movement and laser firing','Opponent collision detection']},
+{t:'Classic Snake Game',c:'Games',y:'2024',i:'🐍',s:['Python','OOP'],d:'Full implementation of Snake with live scoring.',l:['Object-oriented snake design','Game state management and a real-time score']},
+{t:'Tic Tac Toe (.aia)',c:'Games',y:'Skills Lab',i:'⭕',s:['MIT App Inventor'],d:'Tic Tac Toe mobile app made for a skill lab session.',l:['Built as an MIT App Inventor .aia project']},
+{t:'Restaurant Website Prototype',c:'Web',y:'2021',i:'🍽️',s:['HTML'],d:'Static multi-page site for a local restaurant.',l:['Self-study project during the COVID-19 pandemic','Pure HTML multi-page layout']}];
+const LANG=[['Python',90],['C',82],['Java',78],['C++',74],['HTML / JS',72],['MATLAB',65]];
+const TOOLS=['Pygame','Flask','SQLite','Streamlit','scikit-learn','OpenCV','MySQL','MIT App Inventor','Makefile','python-pptx','Git & GitHub'];
+const CONC=['OOP','Data structures','Algorithms','Cryptography','Steganography','Anomaly detection','Decision trees','Bayesian learning','KNN','Symbolic ODEs','Interpolation','Curve fitting'];
+// skills
+function skTab(k){$('#skt').innerHTML=['Languages','Tools','Concepts'].map(x=>'<button class="tab'+(x===k?' on':'')+'" data-sk="'+x+'">'+x+'</button>').join('');
+ $('#sk').innerHTML=k==='Languages'?LANG.map(x=>'<div class="fl"><span>'+x[0]+'</span><span>'+x[1]+'%</span></div><div class="bar"><i data-w="'+x[1]+'"></i></div>').join(''):(k==='Tools'?TOOLS:CONC).map(chip).join('');
+ setTimeout(()=>$$('.bar i').forEach(i=>i.style.width=i.dataset.w+'%'),40)}
+function radar(){const v=[90,82,78,74,72,60,70,65],nm=['Python','C','Java','C++','Web','ML','Crypto','MATLAB'],xy=(i,r)=>{const a=i/8*6.283-1.571;return [100+Math.cos(a)*r,100+Math.sin(a)*r]};let g='';[33,66,100].forEach(p=>g+='<polygon fill="none" stroke="var(--b)" points="'+v.map((_,i)=>xy(i,p*.8).join(',')).join(' ')+'"/>');
+ return '<svg viewBox="-25 -5 250 210" width="100%">'+g+'<polygon fill="color-mix(in srgb,var(--m) 30%,transparent)" stroke="var(--m)" stroke-width="1.5" points="'+v.map((x,i)=>xy(i,x*.8).join(',')).join(' ')+'"/>'+nm.map((n,i)=>{const p=xy(i,96);return '<text x="'+p[0]+'" y="'+p[1]+'" fill="var(--c)" font-size="9" text-anchor="middle" dominant-baseline="middle">'+n+'</text>'}).join('')+'</svg>'}
+$('#rd').innerHTML=radar();skTab('Languages');
+// projects
+const cats=['All',...new Set(P.map(p=>p.c))];
+function pj(f){$('#pf').innerHTML=cats.map(c=>'<button class="tab'+(c===f?' on':'')+'" data-f="'+c+'">'+c+'</button>').join('');
+ $('#pl').innerHTML=P.map((p,i)=>(f==='All'||p.c===f)?'<article class="card tilt" data-p="'+i+'"><div class="ic">'+p.i+'</div><small class="mu">'+p.c+' · '+p.y+'</small><h3>'+p.t+'</h3><p>'+p.d+'</p><div>'+p.s.map(chip).join('')+'</div><span class="more">View details →</span></article>':'').join('');tiltAll()}
+function mo(i){const p=P[i];$('#mb').innerHTML='<div class="ic">'+p.i+'</div><small class="mu">'+p.c+' · '+p.y+'</small><h3>'+p.t+'</h3><p class="mu">'+p.d+'</p><ul>'+p.l.map(x=>'<li>'+x+'</li>').join('')+'</ul><div style="margin-top:10px">'+p.s.map(chip).join('')+'</div>';$('#md').classList.add('on')}
+// research
+const PH=[['Phase 1','Literature review and system architecture','Study existing work, define the research gap and design the system architecture.'],['Phase 2','Implementation and prototyping','Build the software-only prototype on a zero-cost, open-source stack.'],['Phase 3','Technical writing and IEEE paper','Write the findings up as an IEEE-format research paper.']];
+function ph(i){$('#pht').innerHTML=PH.map((p,j)=>'<button class="tab'+(i===j?' on':'')+'" data-ph="'+j+'">'+p[0]+'</button>').join('');$('#phd').innerHTML='<h3>'+PH[i][1]+'</h3><p class="mu">'+PH[i][2]+'</p>'}
+ph(0);$('#thm').innerHTML=['AI','IoT','AR/VR/MR','Quantum Security','Edge Computing','Ethical AI','Cloud Security','Programming Mechanics','AI for Social Good','AI in Education','Data Science and Analytics'].map(chip).join('');
+$('#tl').innerHTML=[['2021','Class X at Indian School Sohar, Oman (91.4%). Built a restaurant website in HTML during COVID.'],['2022','Class XI–XII at Mount Litera Zee School with ALLEN coaching. Python and MySQL.'],['2024','Built Space Warship and Snake in Pygame. Finished the C/C++ course at BALC.'],['2025','Java certification at BALC. Joined RVCE for B.E. CSE.'],['Semester 1','Group project: Smart Production &amp; Cost Analyzer.'],['Now','Crypto-Vault in C, MATLAB, machine learning, CTFs and the 3rd-semester EL project with a team of 4.']].map(x=>'<div class="tl"><small>'+x[0]+'</small><p class="mu">'+x[1]+'</p></div>').join('');
+// terminal
+const TC={help:'commands: help, whoami, skills, flag, rot13 TEXT, hex TEXT',whoami:'ullash // RVCE CSE // cipher breaker',skills:'python c java c++ crypto stego opencv',flag:'flag{curiosity_is_the_best_exploit}'};
+$('#tm').onkeydown=e=>{if(e.key!=='Enter')return;const v=e.target.value.trim();e.target.value='';const[a,...s]=v.split(' '),x=s.join(' ');let r=TC[a]||'unknown command';
+ if(a==='rot13')r=x.replace(/[a-z]/gi,c=>{const b=c<='Z'?65:97;return String.fromCharCode((c.charCodeAt(0)-b+13)%26+b)});if(a==='hex')r=[...x].map(c=>c.charCodeAt(0).toString(16)).join(' ');$('#to').textContent='ullash@ctf:~$ '+v+'\n'+r};
+// lab
+function lab(){const t=$('#li').value,k=+$('#ls').value,cs=[...t];$('#sv').textContent=k;
+ $('#lo').textContent='Caesar : '+t.replace(/[a-z]/gi,c=>{const b=c<='Z'?65:97;return String.fromCharCode((c.charCodeAt(0)-b+k)%26+b)})+'\nGlyphs : '+t.toUpperCase().replace(/[A-Z]/g,c=>String.fromCodePoint(0x2D30+c.charCodeAt(0)-65))+'\nBinary : '+cs.map(c=>c.charCodeAt(0).toString(2).padStart(8,'0')).join(' ')+'\nHex    : '+cs.map(c=>c.charCodeAt(0).toString(16).padStart(2,'0')).join(' ')+'\nXOR key: '+cs.map(c=>(c.charCodeAt(0)^k).toString(16).padStart(2,'0')).join(' ')}
+$('#li').oninput=$('#ls').oninput=lab;lab();
+// contact
+$('#cp1').onclick=async e=>{try{await navigator.clipboard.writeText('ullash.naik229@gmail.com');e.target.textContent='Copied ✓'}catch(_){e.target.textContent='ullash.naik229@gmail.com'}};
+$('#fs').onclick=()=>{const a=document.createElement('a');a.href='mailto:ullash.naik229@gmail.com?subject='+encodeURIComponent('Portfolio message from '+($('#fn').value||'a visitor'))+'&body='+encodeURIComponent($('#fm').value);a.click()};
+// tilt
+function tiltAll(){$$('.tilt').forEach(el=>{if(el._t)return;el._t=1;el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;el.style.transform='perspective(700px) rotateY('+x*10+'deg) rotateX('+-y*10+'deg) translateZ(6px)'});el.addEventListener('pointerleave',()=>el.style.transform='')})}
+pj('All');tiltAll();
+// theme
+function toggleTheme(){const r=document.documentElement,cur=r.dataset.theme||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');r.dataset.theme=cur==='dark'?'light':'dark';setTimeout(()=>window.recolor&&recolor(),30)}
+$('#th').onclick=toggleTheme;
+// palette
+const ALL=SEC.map(s=>['Go to '+s[1],'Section',()=>go(s[0])]).concat(P.map((p,i)=>['Project: '+p.t.replace('&amp;','&'),p.c,()=>mo(i)]),[['Toggle light / dark','Action',toggleTheme]]);
+let items=[],ix=0;
+function cpR(){const q=$('#ci').value.toLowerCase();items=ALL.filter(x=>x[0].toLowerCase().includes(q));ix=Math.min(ix,Math.max(items.length-1,0));$('#cl').innerHTML=items.map((x,i)=>'<button class="ci'+(i===ix?' on':'')+'" data-i="'+i+'">'+x[0]+'<small class="mu">'+x[1]+'</small></button>').join('')||'<p class="mu" style="padding:10px">No match</p>'}
+function cpOpen(){$('#cp').classList.add('on');$('#ci').value='';ix=0;cpR();$('#ci').focus()}
+function cpRun(i){const x=items[i];if(!x)return;$('#cp').classList.remove('on');x[2]()}
+$('#k').onclick=cpOpen;$('#ci').oninput=()=>{ix=0;cpR()};
+// global events
+document.addEventListener('click',e=>{const t=e.target;let n;
+ if(n=t.closest('[data-go]'))go(n.dataset.go);
+ if(n=t.closest('[data-f]'))pj(n.dataset.f);
+ if(n=t.closest('[data-sk]'))skTab(n.dataset.sk);
+ if(n=t.closest('[data-ph]'))ph(+n.dataset.ph);
+ if(n=t.closest('[data-p]'))mo(+n.dataset.p);
+ if(n=t.closest('.ci'))cpRun(+n.dataset.i);
+ if(t.id==='md'||t.id==='mx')$('#md').classList.remove('on');
+ if(t.id==='cp')$('#cp').classList.remove('on')});
+addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();cpOpen()}
+ if(e.key==='Escape'){$('#md').classList.remove('on');$('#cp').classList.remove('on')}
+ if($('#cp').classList.contains('on')){if(e.key==='ArrowDown'){ix=Math.min(ix+1,items.length-1);cpR();e.preventDefault()}if(e.key==='ArrowUp'){ix=Math.max(ix-1,0);cpR();e.preventDefault()}if(e.key==='Enter')cpRun(ix)}});
+// scroll spy, progress
+function sp(){const h=document.documentElement.scrollHeight-innerHeight;$('#pg').style.width=(h>0?scrollY/h*100:0)+'%';let cur='home';SEC.forEach(s=>{if(document.getElementById(s[0]).getBoundingClientRect().top<=140)cur=s[0]});$$('.nl').forEach(b=>b.classList.toggle('on',b.dataset.go===cur))}
+addEventListener('scroll',sp,{passive:true});sp();
+// reveal + counters
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}}),{threshold:.08});$$('.rv').forEach(e=>io.observe(e));
+new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){o.disconnect();$$('[data-n]').forEach(el=>{let v=0;const n=+el.dataset.n,id=setInterval(()=>{v+=1;el.textContent=v;if(v>=n)clearInterval(id)},90)})}}).observe($('#st'));
+// 3D hero
+try{const cv=$('#hc'),R=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:true}),S=new THREE.Scene(),cam=new THREE.PerspectiveCamera(50,1,.1,100);cam.position.z=6.2;R.setPixelRatio(Math.min(devicePixelRatio,2));
+ const G=[()=>new THREE.IcosahedronGeometry(1.8,1),()=>new THREE.TorusKnotGeometry(1.2,.4,120,16),()=>new THREE.OctahedronGeometry(2,1),()=>new THREE.TorusGeometry(1.5,.55,16,40)];let gi=0;
+ const wm=new THREE.MeshBasicMaterial({wireframe:true,transparent:true,opacity:.85}),sm=new THREE.MeshBasicMaterial(),pm=new THREE.PointsMaterial({size:.05}),grp=new THREE.Group(),mesh=new THREE.Mesh(G[0](),wm),core=new THREE.Mesh(G[0](),sm);core.scale.setScalar(.97);grp.add(mesh,core);S.add(grp);
+ const pp=[];for(let i=0;i<700;i++){const r=3+Math.random()*3,a=Math.random()*6.283,b=Math.acos(2*Math.random()-1);pp.push(r*Math.sin(b)*Math.cos(a),r*Math.cos(b),r*Math.sin(b)*Math.sin(a))}
+ const pg=new THREE.BufferGeometry();pg.setAttribute('position',new THREE.Float32BufferAttribute(pp,3));const pts=new THREE.Points(pg,pm);S.add(pts);
+ window.recolor=()=>{const cs=getComputedStyle(document.documentElement),g=n=>cs.getPropertyValue(n).trim();wm.color.set(g('--c'));pm.color.set(g('--m'));sm.color.set(g('--bg'))};recolor();
+ const rs=()=>{const p=cv.parentElement;R.setSize(p.clientWidth,p.clientHeight,false);cam.aspect=p.clientWidth/p.clientHeight;cam.updateProjectionMatrix()};new ResizeObserver(rs).observe(cv.parentElement);rs();
+ let dr=false,lx=0,ly=0,vx=.004,vy=.002,mv=0,px=0,py=0;
+ cv.addEventListener('pointerdown',e=>{dr=true;lx=e.clientX;ly=e.clientY;mv=0;cv.setPointerCapture(e.pointerId)});
+ cv.addEventListener('pointermove',e=>{const r=cv.getBoundingClientRect();px=(e.clientX-r.left)/r.width-.5;py=(e.clientY-r.top)/r.height-.5;if(dr){vx=(e.clientX-lx)*.008;vy=(e.clientY-ly)*.008;grp.rotation.y+=vx;grp.rotation.x+=vy;mv+=Math.abs(e.clientX-lx)+Math.abs(e.clientY-ly);lx=e.clientX;ly=e.clientY}});
+ cv.addEventListener('pointerup',()=>{dr=false;if(mv<6){gi=(gi+1)%G.length;mesh.geometry.dispose();core.geometry.dispose();mesh.geometry=G[gi]();core.geometry=G[gi]()}});
+ const tk=t=>{requestAnimationFrame(tk);if(!dr){grp.rotation.y+=.004+vx*.02;grp.rotation.x+=.0015;vx*=.95}pts.rotation.y=t*.00008;cam.position.x+=(px*1.2-cam.position.x)*.05;cam.position.y+=(-py*1.2-cam.position.y)*.05;cam.lookAt(0,0,0);R.render(S,cam)};requestAnimationFrame(tk)}catch(err){$('.hv').innerHTML='<p class="mu">3D view needs WebGL.</p>'}
+</script></body></html>
